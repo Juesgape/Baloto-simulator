@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloto imaginario</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <style> @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap'); </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Simulador de Baloto</h1>
+    </div>
+
+    <div class="numbers-container">
+        <div class="numbers">
+            <div id="n1-container" class="border"><input class="n1" type="number"></div>
+            <div id="n2-container"  class="border"><input class="n2" type="number"></div>
+            <div id="n3-container"  class="border"><input  class="n3" type="number"></div>
+            <div id="n4-container"  class="border"><input class="n4" type="number"></div>
+            <div id="n5-container"  class="border"><input class="n5" type="number"></div>
+            <div id="n6-container"  class="balota">
+                <div><input class="n6" type="number"></div>
+                <div class="border" class="balota"><span>balota</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-start">
+        <button id="play">Probar</button>
+    </div>
+
+    <div class="winner-container">
+        <div class="winner-title">
+            <h2>Números ganadores</h2>
+        </div>
+        <div class="numbers">
+            <div id="n1-winner-container" class="border"><span class="n1w">0</span></div>
+            <div id="n2-winner-container" class="border"><span class="n2w">0</span></div>
+            <div id="n3-winner-container" class="border"><span class="n3w">0</span></div>
+            <div id="n4-winner-container" class="border"><span class="n4w">0</span></div>
+            <div id="n5-winner-container" class="border"><span class="n5w">0</span></div>
+            <div id="n6-winner-container" class="balotaw">
+                <div class="n6w"><span class="balotaw">0</span></div>
+                <div><span>balota</span></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="attemps-container">
+        <div class="attemps-center">
+            <div class="attemps-title">
+                <h3>Intentos</h3>
+            </div>
+            <div><span class="attemps">0</span></div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

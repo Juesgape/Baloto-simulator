@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #63238e;
+    font-family: 'Merriweather', serif;
+}
+.title {
+    color: white;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+.numbers-container {
+    background-color: white;
+}
+.numbers {
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: white;
+}
+.balota {
+    display: flex;
+    background-color: aquamarine;
+}
+.balotaw {
+    display: flex;
+    background-color: aquamarine;
+    padding-right: 1rem;
+}
+.balota span {
+    padding-left: 1rem;
+}
+.btn-start {
+    text-align: center;
+    padding-top: 2rem;
+}
+.winner-title {
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#play {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    border-radius: 15px;
+    border-color: rgb(133, 133, 245);
+    background: none;
+    background-color:bisque;
+}
+.border {
+    border-right: solid black;
+}
+input {
+    width: 5rem; 
+    font-size: 2rem;   
+}
+#correct {
+    background-color: green;
+}
+#incorrect {
+    background-color: red;
+}
+.attemps-container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.attemps-center {
+    text-align: center;
+}
+.attemps-center div {
+    padding-top: 0.5rem;
+}
+.attemps-title, .attemps {
+    color: white;
+}
+.attemps {
+    font-size: 1.3rem;
+}
