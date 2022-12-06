@@ -38,6 +38,7 @@ let counter = 0
 const btnPlay = document.querySelector('#play')
 
 let numbers = []
+let balotaNumber = 0
 
 btnPlay.addEventListener('click', () => {
     randomNumber()
@@ -56,18 +57,18 @@ function randomNumber() {
 
         let generator = Math.floor(Math.random() * 44)
 
-        if (generator === 0 || numbers.includes(generator)) {
-            console.log(`El número problema es ${generator}`)
+        if (generator === 0 || numbers.includes(generator.toString())) {
+            /* console.log(`El número problema es ${generator}`) */
             do {
                 generator = Math.floor(Math.random() * 44)
-                console.log('Nuevo número generado es ' + generator)
+                /* console.log('Nuevo número generado es ' + generator) */
             } while (generator === 0);
         } 
 
-        numbers.push(generator)
+        numbers.push(generator.toString())
 
 
-        console.log(`${i} equals ${generator}`)
+        /* console.log(`${i} equals ${generator}`) */
     }
     console.log(numbers)
 }
@@ -82,7 +83,8 @@ function baloto() {
         } while (number === 0);
     }
 
-    numbers.push(number)
+
+    balotaNumber = number.toString()
 }
 
 function fillSpaces() {
@@ -91,7 +93,7 @@ function fillSpaces() {
     winnerNum3.textContent = numbers[2]
     winnerNum4.textContent = numbers[3]
     winnerNum5.textContent = numbers[4] 
-    winnerBalota.textContent = numbers[5]
+    winnerBalota.textContent = balotaNumber
 }
 function getUserNumbers() {
     number1 = document.querySelector('.n1').value
@@ -100,7 +102,7 @@ function getUserNumbers() {
     number4 = document.querySelector('.n4').value
     number5 = document.querySelector('.n5').value
     balota = document.querySelector('.n6').value
-    console.log('Numbers from user saved', {number1, number2, number3, number4, number5, balota})
+    /* console.log('Numbers from user saved', {number1, number2, number3, number4, number5, balota}) */
 
     checkUserNumbers()
 
@@ -110,23 +112,31 @@ function checkCorrectNumbers() {
 
     defaultAnswer()
 
-    if(number1 == numbers[0]) {
-        machineWinner1.setAttribute('id','correct')
+    /* numbers.includes(parseInt(number1)) ? console.log('Yes it does') : console.log('No it does not') */
+
+   if(numbers.includes(number1)) {
+        console.log('Yes it does')
+        numberPlayer1.setAttribute('id','correct')
     } 
-    if(number2 == numbers[1]) {
-        machineWinner2.setAttribute('id','correct')
+    if(numbers.includes(number2)) {
+        console.log('Yes it does')
+        numberPlayer2.setAttribute('id','correct')
     } 
-    if(number3 == numbers[2]) {
-        machineWinner3.setAttribute('id','correct')
+    if(numbers.includes(number3)) {
+        console.log('Yes it does')
+        numberPlayer3.setAttribute('id','correct')
     } 
-    if(number4 == numbers[3]) {
-        machineWinner4.setAttribute('id','correct')
+    if(numbers.includes(number4)) {
+        console.log('Yes it does')
+        numberPlayer4.setAttribute('id','correct')
     } 
-    if(number5 == numbers[4]) {
-        machineWinner5.setAttribute('id','correct')
+    if(numbers.includes(number5)) {
+        console.log('Yes it does')
+        numberPlayer5.setAttribute('id','correct')
     } 
-    if(balota == numbers[5]) {
-        machineWinner6.setAttribute('id','correct')
+    if(balota === balotaNumber) {
+        console.log('Yes it does')
+        numberPlayer6.setAttribute('id','correct')
     } 
     
 }
@@ -139,17 +149,17 @@ function checkUserNumbers() {
         console.log('Debes rellenar los campos')
     } */ else {
         checkCorrectNumbers()
-        console.log("It's all good")
+        /* console.log("It's all good") */
     }
 }
 
 function defaultAnswer() {
-    machineWinner1.setAttribute('id','incorrect')
-    machineWinner2.setAttribute('id','incorrect')
-    machineWinner3.setAttribute('id','incorrect')
-    machineWinner4.setAttribute('id','incorrect')
-    machineWinner5.setAttribute('id','incorrect')
-    machineWinner6.setAttribute('id','incorrect')
+    numberPlayer1.setAttribute('id','incorrect')
+    numberPlayer2.setAttribute('id','incorrect')
+    numberPlayer3.setAttribute('id','incorrect')
+    numberPlayer4.setAttribute('id','incorrect')
+    numberPlayer5.setAttribute('id','incorrect')
+    numberPlayer6.setAttribute('id','incorrect')
 }
 
 function updateAttemp() {
